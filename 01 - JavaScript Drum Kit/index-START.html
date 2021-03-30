@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Drum Kit</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="keys">
+      <div data-key="65" class="key">
+        <kbd>A</kbd>
+      </div>
+      <div data-key="66" class="key">
+        <kbd>B</kbd>
+      </div>
+      <div data-key="67" class="key">
+        <kbd>C</kbd>
+      </div>
+      <div data-key="68" class="key">
+        <kbd>D</kbd>
+      </div>
+      <div data-key="69" class="key">
+        <kbd>E</kbd>
+      </div>
+      <div data-key="70" class="key">
+        <kbd>F</kbd>
+      </div>
+      <div data-key="71" class="key">
+        <kbd>G</kbd>
+      </div>
+      <div data-key="72" class="key">
+        <kbd>H</kbd>
+      </div>
+      <div data-key="73" class="key">
+        <kbd>I</kbd>
+      </div>
+      <div data-key="74" class="key">
+        <kbd>J</kbd>
+      </div>
+      <div data-key="75" class="key">
+        <kbd>K</kbd>
+      </div>
+      <div data-key="76" class="key">
+        <kbd>L</kbd>
+      </div>
+      <div data-key="77" class="key">
+        <kbd>M</kbd>
+      </div>
+      <div data-key="78" class="key">
+        <kbd>N</kbd>
+      </div>
+      <div data-key="79" class="key">
+        <kbd>O</kbd>
+      </div>
+      <div data-key="80" class="key">
+        <kbd>P</kbd>
+      </div>
+      <div data-key="81" class="key">
+        <kbd>Q</kbd>
+      </div>
+      <div data-key="82" class="key">
+        <kbd>R</kbd>
+      </div>
+      <div data-key="83" class="key">
+        <kbd>S</kbd>
+      </div>
+      <div data-key="84" class="key">
+        <kbd>T</kbd>
+      </div>
+      <div data-key="85" class="key">
+        <kbd>U</kbd>
+      </div>
+      <div data-key="86" class="key">
+        <kbd>V</kbd>
+      </div>
+      <div data-key="87" class="key">
+        <kbd>W</kbd>
+      </div>
+      <div data-key="88" class="key">
+        <kbd>X</kbd>
+      </div>
+      <div data-key="89" class="key">
+        <kbd>Y</kbd>
+      </div>
+      <div data-key="90" class="key">
+        <kbd>Z</kbd>
+      </div>
+    </div>
+
+    <audio data-key="65" src="sounds/letter_a.wav"></audio>
+    <audio data-key="66" src="sounds/letter_b.wav"></audio>
+    <audio data-key="67" src="sounds/letter_c.wav"></audio>
+    <audio data-key="68" src="sounds/letter_d.wav"></audio>
+    <audio data-key="69" src="sounds/letter_e.wav"></audio>
+    <audio data-key="70" src="sounds/letter_f.wav"></audio>
+    <audio data-key="71" src="sounds/letter_g.wav"></audio>
+    <audio data-key="72" src="sounds/letter_h.wav"></audio>
+    <audio data-key="73" src="sounds/letter_i.wav"></audio>
+    <audio data-key="74" src="sounds/letter_j.wav"></audio>
+    <audio data-key="75" src="sounds/letter_k.wav"></audio>
+    <audio data-key="76" src="sounds/letter_l.wav"></audio>
+    <audio data-key="77" src="sounds/letter_m.wav"></audio>
+    <audio data-key="78" src="sounds/letter_n.wav"></audio>
+    <audio data-key="79" src="sounds/letter_o.wav"></audio>
+    <audio data-key="80" src="sounds/letter_p.wav"></audio>
+    <audio data-key="81" src="sounds/letter_q.wav"></audio>
+    <audio data-key="82" src="sounds/letter_r.wav"></audio>
+    <audio data-key="83" src="sounds/letter_s.wav"></audio>
+    <audio data-key="84" src="sounds/letter_t.wav"></audio>
+    <audio data-key="85" src="sounds/letter_u.wav"></audio>
+    <audio data-key="86" src="sounds/letter_v.wav"></audio>
+    <audio data-key="87" src="sounds/letter_w.wav"></audio>
+    <audio data-key="88" src="sounds/letter_x.wav"></audio>
+    <audio data-key="89" src="sounds/letter_y.wav"></audio>
+    <audio data-key="90" src="sounds/letter_z.wav"></audio>
+
+    <script>
+      function playSound(e) {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+        if (!audio) return; // stop the function from running altogether
+        audio.currentTime = 0; //rewind to the start
+        console.log(key);
+        audio.play();
+        key.classList.add("playing");
+      }
+      function removeTransition(e) {
+        if (e.propertyName !== "transform") return;
+        console.log(e.propertyName);
+        this.classList.remove("playing");
+      }
+
+      const keys = document.querySelectorAll(".key");
+      keys.forEach(key =>
+        key.addEventListener("transitionend", removeTransition)
+      );
+      window.addEventListener("keydown", playSound);
+    </script>
+  </body>
+</html>
