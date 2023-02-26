@@ -76,8 +76,12 @@ After defining the inference script, calling with the line below and deploying i
 The predictions were made using the line below
 
 ` response = predictor.predict(payload, initial_args={"ContentType": "image/jpeg"})`
+
+
 **TODO** Remember to provide a screenshot of the deployed active endpoint in Sagemaker.
 <img width="1450" alt="activeendpoint" src="https://user-images.githubusercontent.com/5279800/221417102-0d411df7-c5af-495a-8657-e81d9206c25e.png">
+
+<img width="1448" alt="endpoint details" src="https://user-images.githubusercontent.com/5279800/221418376-9bcc0dc6-f950-4e03-a81e-374149b5d124.png">
 
 ## Standout Suggestions
 **TODO (Optional):** This is where you can provide information about any standout suggestions that you have attempted.
