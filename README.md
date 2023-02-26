@@ -21,10 +21,10 @@ I decided on the ResNet18, I decided to use this architecture because it is know
 
 The hyperparameters selected and thier ranges are as follows:-
 
- batch_size: This determines how many samples used in each mini-batch during training used [ 64, 128]
- Learning rate(lr): This controls the step size in the gradient desent algorithm used a range of 0.0001 and  0.1
- epsilon value(eps): This is used in batch normalization the range of  0.00000001 and 0.000000001 was used.  
- weight_decay: This adds a penalty term to loss function and used a range of 0.001 and 0.1
+ - batch_size: This determines how many samples used in each mini-batch during training used [ 64, 128]
+ - Learning rate(lr): This controls the step size in the gradient desent algorithm used a range of 0.0001 and  0.1
+ - epsilon value(eps): This is used in batch normalization the range of  0.00000001 and 0.000000001 was used.  
+ - weight_decay: This adds a penalty term to loss function and used a range of 0.001 and 0.1
 
 Remember that your README should:
 - Include a screenshot of completed training jobs
