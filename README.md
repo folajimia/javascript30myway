@@ -27,6 +27,8 @@ The hyperparameters selected and thier ranges are as follows:-
  - weight_decay: This adds a penalty term to loss function and used a range of 0.001 and 0.1
 
 Remember that your README should:
+
+
 - Include a screenshot of completed training jobs
 <img width="1414" alt="completed training" src="https://user-images.githubusercontent.com/5279800/221414600-6952fefe-54b1-4d4f-a090-f76e6cf8d2c0.png">
 - Logs metrics during the training process
@@ -57,6 +59,8 @@ most of  my AWS credit in tuning and training.
 
 ## Model Deployment
 **TODO**: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+
+
 I at first deployed my endpoint using the line below but kept getting errors after searching several threads in slack i came across
 `predictor=estimator.deploy(initial_instance_count=1, instance_type='ml.m5.xlarge')`
 https://sagemaker-examples.readthedocs.io/en/latest/frameworks/pytorch/get_started_mnist_deploy.html
